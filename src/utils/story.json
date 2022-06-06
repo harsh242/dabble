@@ -1,0 +1,621 @@
+{
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "name": "_aboutAuthor",
+          "type": "string"
+        }
+      ],
+      "name": "createAuthor",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "name": "createBook",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_bookId",
+          "type": "uint256"
+        },
+        {
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "name": "_content",
+          "type": "string"
+        },
+        {
+          "name": "_question",
+          "type": "string"
+        },
+        {
+          "name": "_authorPreference",
+          "type": "bool"
+        },
+        {
+          "name": "bookName",
+          "type": "string"
+        }
+      ],
+      "name": "createChapter",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "uint256"
+        }
+      ],
+      "name": "createReader",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_chapterId",
+          "type": "uint256"
+        }
+      ],
+      "name": "makePayemntOnConsensus",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_chapterId",
+          "type": "uint256"
+        }
+      ],
+      "name": "payReaders",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_chapterId",
+          "type": "uint256"
+        }
+      ],
+      "name": "readChapter",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "minimumAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setChapterMinStake",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_chapterId",
+          "type": "uint256"
+        },
+        {
+          "name": "_vote",
+          "type": "bool"
+        }
+      ],
+      "name": "voteForFollowup",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "chapterName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "authorName",
+          "type": "string"
+        }
+      ],
+      "name": "ChapterCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "bookName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "userName",
+          "type": "string"
+        }
+      ],
+      "name": "HasReadBook",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "userType",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "userName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "aboutAuthor",
+          "type": "string"
+        }
+      ],
+      "name": "UserCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "bookName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "auhtor",
+          "type": "string"
+        }
+      ],
+      "name": "BookCreated",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "authorIdMapping",
+      "outputs": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "aboutAuthor",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "bookIdMapping",
+      "outputs": [
+        {
+          "name": "authorId",
+          "type": "address"
+        },
+        {
+          "name": "bookId",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "booksOfAuthor",
+      "outputs": [
+        {
+          "name": "authorId",
+          "type": "address"
+        },
+        {
+          "name": "bookId",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "ChapterMapping",
+      "outputs": [
+        {
+          "name": "author",
+          "type": "address"
+        },
+        {
+          "name": "bookId",
+          "type": "uint256"
+        },
+        {
+          "name": "chapterId",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "bounty",
+          "type": "uint256"
+        },
+        {
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "name": "authorPreference",
+          "type": "bool"
+        },
+        {
+          "name": "question",
+          "type": "string"
+        },
+        {
+          "name": "chapterState",
+          "type": "uint256"
+        },
+        {
+          "name": "isResolved",
+          "type": "bool"
+        },
+        {
+          "name": "creationTime",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_chapterId",
+          "type": "uint256"
+        }
+      ],
+      "name": "createConsesus",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllAuthors",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllBooks",
+      "outputs": [
+        {
+          "components": [
+            {
+              "name": "authorId",
+              "type": "address"
+            },
+            {
+              "name": "bookId",
+              "type": "uint256"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "chapterIdList",
+              "type": "uint256[]"
+            }
+          ],
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllBooksOfAuthor",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_bookId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAllChapterBooks",
+      "outputs": [
+        {
+          "components": [
+            {
+              "name": "author",
+              "type": "address"
+            },
+            {
+              "name": "bookId",
+              "type": "uint256"
+            },
+            {
+              "name": "chapterId",
+              "type": "uint256"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "bounty",
+              "type": "uint256"
+            },
+            {
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "name": "authorPreference",
+              "type": "bool"
+            },
+            {
+              "name": "question",
+              "type": "string"
+            },
+            {
+              "name": "readers",
+              "type": "address[]"
+            },
+            {
+              "name": "chapterState",
+              "type": "uint256"
+            },
+            {
+              "name": "isResolved",
+              "type": "bool"
+            },
+            {
+              "name": "creationTime",
+              "type": "uint256"
+            }
+          ],
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_chapterId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getIndividualEarning",
+      "outputs": [
+        {
+          "name": "amountStaked",
+          "type": "uint256"
+        },
+        {
+          "name": "castedVote",
+          "type": "bool"
+        },
+        {
+          "name": "winning_status",
+          "type": "bool"
+        },
+        {
+          "name": "maxPayment",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "chapterId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "hasRead",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_chapterId",
+          "type": "uint256"
+        }
+      ],
+      "name": "hasVoted",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "readerIdMapping",
+      "outputs": [
+        {
+          "name": "name",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}
